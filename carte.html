@@ -17,6 +17,61 @@
             align-items: center;
             min-height: 100vh;
             font-family: 'Montserrat', sans-serif;
+            perspective: 1000px;
+        }
+
+        .envelope {
+            width: 300px;
+            height: 200px;
+            background: #d4af37;
+            position: relative;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+            z-index: 10;
+        }
+
+        .envelope::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-top: 100px solid #c2a030;
+            transform-origin: top;
+            transition: all 1s ease;
+            transform: rotateX(0deg);
+            z-index: 5;
+        }
+
+        .envelope::after {
+            content: 'Ouvrir';
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .envelope.open {
+            transform: translateY(-100px) rotateX(180deg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 1s ease, opacity 0.5s ease 0.5s, visibility 0s linear 1s;
+        }
+
+        .envelope.open::before {
+            transform: rotateX(180deg);
+        }
+
+        .invitation-container {
+            position: absolute;
+            display: none;
+            width: 100%;
+            justify-content: center;
         }
         
         .invitation-card {
@@ -196,7 +251,9 @@
     </style>
 </head>
 <body>
-    <div class="invitation-card">
+    <div class="envelope"></div>
+    <div class="invitation-container">
+        <div class="invitation-card">
         <div class="decoration top-left"></div>
         <div class="decoration bottom-right"></div>
         <div class="scroll-decoration scroll-left"></div>
@@ -221,12 +278,22 @@
             Contact : +229 01 43 75 65 31
         </div>
         
-        <!-- <button class="download-btn">Télécharger en PNG</button> -->
-
+                <!-- <button class="download-btn">Télécharger en PNG</button> -->
         <button class="contacter"><a href="https://wa.me/+2290153007134">CLIQUEZ ICI POUR COMMANDER UN SITE WEB / AFFICHE / CARTE</a></button>
+
+    </div>
     </div>
     
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        document.querySelector('.envelope').addEventListener('click', function() {
+            this.classList.add('open');
+            setTimeout(() => {
+                document.querySelector('.invitation-container').style.display = 'flex';
+                this.style.display = 'none'; // Remove envelope completely
+            }, 1000);
+        });
+    </script>
     <script>
         document.querySelector('.download-btn').addEventListener('click', function() {
             html2canvas(document.querySelector('.invitation-card')).then(canvas => {
