@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Remise de Diplôme</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&family=Dancing+Script:wght@700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            margin-bottom: 20px;
+            background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/849c7c62-7df2-49ed-8b59-ea7c3909580d.png') center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .invitation-card {
+            width: 90%;
+            max-width: 600px;
+            background: 
+                linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+                url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d287bd6e-5f0e-4012-bea7-62548dc1192a.png') center/cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .invitation-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #d4af37, #a8d8ea, #a2d5ab);
+        }
+        
+        .title {
+            font-family: 'Playfair Display', serif;
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 2px;
+            background-color: #d4af37;
+            margin: 15px auto;
+        }
+        
+        .name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin: 30px 0;
+            line-height: 1.2;
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+        }
+        
+        .details {
+            margin: 30px 0;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .note {
+            font-style: italic;
+            color: #777;
+            margin: 30px 0;
+            font-size: 1rem;
+        }
+        
+        .contact {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .download-btn {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #d4af37;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        } 
+
+        .contacter {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #d4af37;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease; 
+        } 
+
+        .contacter a {
+            text-decoration: none; 
+            text-transform: uppercase; 
+            color: white; 
+            font-weight: 700;
+        }
+        
+        .download-btn:hover {
+            background-color: #c2a030;
+            transform: translateY(-2px);
+        } 
+
+        .contacter:hover {
+            background-color: #c2a030;
+            transform: translateY(-2px);
+        }
+        
+        .decoration {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .decoration.top-left {
+            top: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c942211e-94a4-4072-8ef6-f83e69ad3333.png');
+        }
+        
+        .decoration.bottom-right {
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4f2b7cda-5810-4ab4-8664-b06cd3aa1207.png');
+        }
+        
+        .scroll-decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 0.05;
+        }
+        
+        .scroll-left {
+            left: -30px;
+            bottom: 30px;
+            background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/63024f08-af4f-47ea-a34a-7bfa72090622.png');
+        }
+        
+        .scroll-right {
+            right: -30px;
+            top: 30px;
+            background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/259e2ca3-6d39-4ee8-b638-cc5a6ab80b67.png');
+        }
+        
+        .mya-design {
+            font-size: 0.9rem;
+            color: #d4af37;
+            margin-top: -20px;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        @media (max-width: 600px) {
+            .name {
+                font-size: 2rem;
+            }
+            .title {
+                font-size: 1.5rem;
+            }
+            .details {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-card">
+        <div class="decoration top-left"></div>
+        <div class="decoration bottom-right"></div>
+        <div class="scroll-decoration scroll-left"></div>
+        <div class="scroll-decoration scroll-right"></div>
+        
+        <h1 class="title">Cérémonie de Remise de Diplôme</h1>
+        
+        <div class="name">Mlle ADADJA Yvette</div>
+        <div class="mya-design">MYA Design</div>
+        
+        <div class="details">
+            Vendredi 8 août 2025 · 14h<br>
+            Salle La Lucide, Godomey<br>
+            (face à St Daniel)
+        </div>
+        
+        <div class="note">
+            Votre présence fera de ce jour un moment inoubliable
+        </div>
+        
+        <div class="contact">
+            Contact : +229 01 43 75 65 31
+        </div>
+        
+        <!-- <button class="download-btn">Télécharger en PNG</button> -->
+        <button class="contacter"><a href="wa.me/+2290153007134">CLIQUEZ ICI POUR COMMANDER UN SITE WEB / AFFICHE / CARTE</a></button>
+    </div>
+    
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        document.querySelector('.download-btn').addEventListener('click', function() {
+            html2canvas(document.querySelector('.invitation-card')).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'diplome-invitation.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+        });
+    </script>
+</body>
+</html>
