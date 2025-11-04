@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Page avec Barre de Navigation Modernisée</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style_essai.css" />
+</head> 
+
+
+<body>
+  <nav aria-label="Navigation principale">
+    <h1 class="logo">LES CHERUBINS CELESTES <span>(LCC)</span></h1>
+
+    <ul role="menubar">
+      <li role="none"><a role="menuitem" href="prog.html" tabindex="-1">PROGRAMME</a></li>
+      <li role="none">
+        <a role="menuitem" href="#" tabindex="-1">CANTIQUES <i class="fa fa-caret-down"></i></a>
+
+        <div class="dropdown_menu">
+          <ul role="menubar">
+            <li role="none"><a role="menuitem" href="cant1.html" tabindex="-1">CANTIQUE 1</a></li>
+            <li role="none"><a role="menuitem" href="cant2.html" tabindex="-1">CANTIQUE 2</a></li>
+            <li role="none"><a role="menuitem" href="cant3.html" tabindex="-1">CANTIQUE 3</a></li>
+            <li role="none"><a role="menuitem" href="cant4.html" tabindex="-1">CANTIQUE 4</a></li>
+            <li role="none"><a role="menuitem" href="cant5.html" tabindex="-1">CANTIQUE 5</a></li>
+            <li role="none"><a role="menuitem" href="cant6.html" tabindex="-1">CANTIQUE 6</a></li>
+            <li role="none"><a role="menuitem" href="cant7.html" tabindex="-1">CANTIQUE 7</a></li>
+          </ul>
+        </div>
+      </li>
+      <li role="none"><a role="menuitem" href="ann.html" tabindex="-1">ANNONCE</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="scrolling-container" id="scrolling-container">
+        <section style="margin-top: 2%;" class="active">
+            <div class="container" style="margin-top: 2%; font-weight: 900;">
+                <h3>            
+                    Cantique N°88 <br>
+                    Gbigbo wiwé jijohono <br>
+                    Tonalité : G
+                </h3>
+            </div>
+        </section>
+        <section style="margin-top: 2%;">
+            <div class="container" style="margin-top: 2%; font-weight: 900;">
+                <h1>            
+                  1. Gbigbo wiwé jijohono;
+                  Jete do sensen miton;
+                  Hie we Aholu Donano;
+                  Miwule to nukun We.
+                </h1>
+            </div>
+        </section>
+        <section style="margin-top: 2%;">
+            <div class="container" style="margin-top: 2%; font-weight: 900;">
+                <h1>            
+                  2. Jiwheyewhe Medato m'ton;
+                  Ahol' yeyino hugan;
+                  Huhlon wiwé jale jete;
+                  Miwule to nukun do we.
+                </h1>
+            </div>
+        </section>
+        <section style="margin-top: 2%;">
+            <div class="container" style="margin-top: 2%; font-weight: 900;">
+                <h1>            
+                 3. To leblanno jale jete;
+                  Hun nukun t'we leblan 'ton;
+                  Miw' madoganno le pinpon we;
+                  Hun leblanhon na mi.
+                </h1>
+            </div>
+        </section>
+        <section style="margin-top: 2%;">
+            <div class="container" style="margin-top: 2%; font-weight: 900;">
+                <h1>            
+                 4. Jiwheyewhe OSHOFFA ton;
+                Jiyewhe Elijah ton;
+                Hi'wè do Mose to zungbo me;
+                Jale jete wa do mi.
+                </h1>
+            </div>
+        </section>
+        <section style="margin-top: 2%;">
+            <div class="container" style="margin-top: 2%; font-weight: 900;">
+                <h1>            
+                 5. Oto gbèno' To Leblano;
+                  Ta hinhon t'wé do mi mẹ;
+                  Oto hinhon madopodong;
+                  Miwule to té pon wé.
+                </h1>
+            </div>
+        </section>
+        <section style="margin-top: 2%;">
+            <div class="container" style="margin-top: 2%; font-weight: 900;">
+                <h1>            
+                  6. Jiyewhe Ablaham, Issac;
+                  Jacob' p'OSHOFFA po ton;
+                  He s'avigbé Elisabeth ton;
+                  Wensino le te pon we.
+                </h1>
+            </div>
+        </section>
+        <section style="margin-top: 2%;">
+            <div class="container" style="margin-top: 2%; font-weight: 900;">
+                <h1>            
+                  7. Gbigbo wiwé apoe 'lon ton;
+                  Lidohiameto nugbo;
+                  Mi zé 'gbé m'ton le d'aga hlan we;
+                  Jomion T'wé n'kon do mi ji.<br>
+
+                    (Nişe)
+                </h1>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Indicateur de progression -->
+    <div class="progress-indicator" id="progress-indicator"></div>
+    
+    <!-- Boutons de navigation -->
+    <div class="navigation-buttons">
+      <button class="nav-btn" id="prevBtn" disabled>Précédent</button>
+      <button class="nav-btn" id="nextBtn">Suivant</button>
+    </div>
+  </main>
+
+  <script src="script_essai.js"></script>
+</body>
+</html>
